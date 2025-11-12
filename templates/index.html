@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wajahat Ashraf - Data Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #7dd3fc 50%, #38bdf8 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark-900/90 backdrop-blur-lg z-50 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+<!--                <div class="w-12 h-12 hero-gradient rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-lg">-->
+<!--                    WA-->
+<!--                </div>-->
+                <div>
+                    <div class="text-xl font-bold">Wajahat Ashraf</div>
+                    <div class="text-sm text-primary-300">Data Engineering • Cloud • Automation</div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#home" class="text-primary-200 hover:text-white transition-colors font-medium">Home</a>
+                <a href="#projects" class="text-primary-200 hover:text-white transition-colors font-medium">Projects</a>
+                <a href="#services" class="text-primary-200 hover:text-white transition-colors font-medium">Services</a>
+                <a href="#experience" class="text-primary-200 hover:text-white transition-colors font-medium">Experience</a>
+                <a href="#skills" class="text-primary-200 hover:text-white transition-colors font-medium">Skills</a>
+                <a href="#contact" class="text-primary-200 hover:text-white transition-colors font-medium">Contact</a>
+                <a href="/static/WAJAHAT_CV.pdf" class="ml-4 bg-primary-600 hover:bg-primary-500 px-4 py-2 rounded-lg font-semibold transition-colors shadow-lg">
+                    Download CV
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button class="p-2 rounded-lg border border-dark-700 hover:border-primary-500 transition-colors">
+                    <i class="fas fa-bars text-primary-300"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Profile Picture Column -->
+                <div class="flex justify-center lg:justify-start">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-2xl overflow-hidden border-4 border-primary-500 shadow-2xl bg-dark-700">
+                            {% if profile.profile_picture %}
+                            <img
+                                src="{{ profile.profile_picture }}"
+                                alt="{{ profile.name }}"
+                                class="w-full h-full object-cover"
+                            >
+                            {% else %}
+                            <div class="w-full h-full bg-gradient-to-br from-dark-600 to-dark-700 flex items-center justify-center">
+                                <i class="fas fa-user text-primary-400 text-4xl"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Floating tech badges -->
+                        <div class="absolute -top-3 -right-3 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-code text-white text-sm"></i>
+                        </div>
+                        <div class="absolute -bottom-3 -left-3 w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-database text-white text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Column -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Name and Title -->
+                    <div class="space-y-3">
+                        <h1 class="text-4xl lg:text-5xl font-bold">
+                            HI, I'm <span class="text-transparent bg-clip-text hero-gradient">Wajahat</span>
+                        </h1>
+                        <p class="text-lg text-primary-200 leading-relaxed">
+                            Data Engineering professional specializing in building scalable ETL systems,
+                            large-scale web scrapers, and cloud-deployed automation that transform
+                            complex data into actionable insights.
+                        </p>
+                    </div>
+
+                    <!-- Tech Stack Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        {% for tech in ['Python', 'AWS', 'Relational Database', 'Web Scraping', 'Docker', 'Elasticsearch','GIS'] %}
+                        <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">
+                            {{ tech }}
+                        </span>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#projects" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border border-primary-600 text-primary-300 hover:bg-primary-900/30 px-6 py-3 rounded-lg font-semibold transition-all">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid Below -->
+            <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                    <div class="text-2xl font-bold text-primary-400">3+</div>
+                    <div class="text-sm font-semibold mt-2">Open Source Projects</div>
+                    <div class="text-xs text-primary-300 mt-1">Public repositories with detailed documentation</div>
+                </div>
+                <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                    <div class="text-2xl font-bold text-primary-400">1M+</div>
+                    <div class="text-sm font-semibold mt-2">Records Processed</div>
+                    <div class="text-xs text-primary-300 mt-1">Geospatial and tabular data</div>
+                </div>
+                <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                    <div class="text-2xl font-bold text-primary-400">98.7%</div>
+                    <div class="text-sm font-semibold mt-2">Data Quality Score</div>
+                    <div class="text-xs text-primary-300 mt-1">Automated validation checks</div>
+                </div>
+                <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                    <div class="text-2xl font-bold text-primary-400">5</div>
+                    <div class="text-sm font-semibold mt-2">Production Services</div>
+                    <div class="text-xs text-primary-300 mt-1">Active pipelines & APIs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Services I Offer</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Comprehensive data engineering solutions tailored to your business needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for s in services %}
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br {{ s.color }} flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        {{ s.icon }}
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">{{ s.title }}</h3>
+                    <p class="text-primary-200 leading-relaxed">{{ s.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    In-depth case studies showcasing complex data engineering challenges and solutions
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                {% for p in projects %}
+                <div class="bg-dark-800 rounded-2xl overflow-hidden border border-dark-700 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">{{ p.title }}</h3>
+                                <p class="text-primary-200 leading-relaxed">{{ p.summary }}</p>
+                            </div>
+
+                            <!-- Project Image -->
+                            <div class="bg-dark-700 rounded-xl p-4 border border-dark-600">
+                                <img src="{{ p.img }}" alt="{{ p.title }}" class="w-full h-50 object-cover rounded-lg">
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Key Features:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        {% for feature in p.features %}
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">
+                                            {{ feature }}
+                                        </span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Tech Stack:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        {% for tech in p.stack %}
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">
+                                            {{ tech }}
+                                        </span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                {% for key, value in p.metrics.items() %}
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">{{ value }}</div>
+                                    <div class="text-sm text-primary-300 capitalize">{{ key }}</div>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="flex gap-4">
+                                <a href="{{ p.repo }}" target="_blank" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    View Code
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-xl p-4 border border-dark-700 max-w-md mx-auto">
+                            <div class="text-center text-primary-300 mb-4 font-semibold">Project Role</div>
+                            <p class="text-primary-200 leading-relaxed">{{ p.role }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Experience & Education</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    My professional journey and academic background
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-primary-300 rounded-full"></div>
+                <div class="space-y-12">
+                    {% for t in timeline %}
+                    <div class="relative pl-20">
+                        <div class="absolute left-6 top-2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-briefcase text-white text-sm"></i>
+                        </div>
+                        <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                                <h3 class="text-xl font-bold">{{ t.title }}</h3>
+                                <span class="text-primary-400 font-semibold">{{ t.date }}</span>
+                            </div>
+                            <div class="text-primary-300 font-semibold mb-4">{{ t.org }}</div>
+                            <p class="text-primary-200 mb-6">{{ t.details }}</p>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary-400">Key Achievements:</h4>
+                                <ul class="list-disc list-inside text-primary-200 space-y-1">
+                                    {% for achievement in t.achievements %}
+                                    <li>{{ achievement }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Skills & Technologies</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Technical expertise across the data engineering stack
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Skills with Progress Bars -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-6">Core Competencies</h3>
+                    {% for s in skills %}
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">{{ s.icon }}</span>
+                                <span class="font-semibold">{{ s.name }}</span>
+                            </div>
+                            <span class="text-primary-400 font-bold">{{ s.level }}%</span>
+                        </div>
+                        <div class="w-full bg-dark-700 rounded-full h-3">
+                            <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300"
+                                 style="width: 0%"
+                                 data-level="{{ s.level }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Technologies Grid -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-6">Technologies & Tools</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {% for tech in technologies %}
+                        <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                            <div class="text-primary-400 font-semibold">{{ tech.name }}</div>
+                            <div class="text-xs text-primary-300 mt-1">{{ tech.category }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Certifications -->
+                    <h3 class="text-xl font-bold mb-4">Certifications</h3>
+                    <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700">
+                        <div class="space-y-3">
+                            {% for cert in certifications %}
+                            <div class="flex flex-col py-2 border-b border-dark-700 last:border-b-0">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-semibold">{{ cert.name }}</div>
+                                        <div class="text-sm text-primary-300">{{ cert.issuer }}</div>
+                                    </div>
+                                    <div class="text-primary-400 text-sm">{{ cert.year }}</div>
+                                </div>
+                                <div class="text-primary-200 text-sm mt-1">{{ cert.details }}</div>
+                                {% if cert.link %}
+                                <div class="mt-1">
+                                    <a href="{{ cert.link }}" target="_blank" class="text-primary-400 text-sm underline hover:text-primary-500">Verify Certificate</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Client Testimonials</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    What colleagues and clients say about working with me
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for testimonial in testimonials %}
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="text-4xl text-primary-400 mb-4">"</div>
+                    <p class="text-primary-200 italic mb-6 leading-relaxed">{{ testimonial.text }}</p>
+                    <div class="border-t border-dark-700 pt-4">
+                        <div class="font-semibold">{{ testimonial.author }}</div>
+                        <div class="text-sm text-primary-400">{{ testimonial.role }}, {{ testimonial.company }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Ready to transform your data challenges into solutions?
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                        <p class="text-primary-200 leading-relaxed">
+                            I'm currently available for freelance work, contract positions, and full-time roles.
+                            Let's discuss how I can help you build robust data solutions.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-primary-300">wajahatashraf420@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Phone</div>
+                                <div class="text-primary-300">+92 333 6188437</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Location</div>
+                                <div class="text-primary-300">Rawalpindi, Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://github.com/wajahatashraf" target="_blank" class="w-12 h-12 bg-dark-700 hover:bg-primary-600 rounded-xl flex items-center justify-center transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/wajahatashraf99" target="_blank" class="w-12 h-12 bg-dark-700 hover:bg-primary-600 rounded-xl flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700">
+                    <form action="https://formspree.io/f/mdkyojje" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Your Name</label>
+                                <input type="text" name="name" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Your Email</label>
+                                <input type="email" name="email" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Subject</label>
+                            <input type="text" name="subject" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="Project Discussion">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea name="message" rows="5" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-500 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold mb-4">Wajahat Ashraf</div>
+            <p class="text-primary-300 max-w-md mx-auto mb-8">
+                Data Engineering Specialist • Cloud Architect • Automation Expert
+            </p>
+            <div class="text-primary-400">
+                © {{ current_year }} Wajahat Ashraf. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const level = bar.getAttribute('data-level');
+                        bar.style.width = level + '%';
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('#skills'));
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-dark-900/95');
+            } else {
+                nav.classList.remove('bg-dark-900/95');
+            }
+        });
+    </script>
+</body>
+</html>
