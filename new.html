@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wajahat Ashraf - Data Engineering Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #7dd3fc 50%, #38bdf8 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark-900/90 backdrop-blur-lg z-50 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+<!--                <div class="w-12 h-12 hero-gradient rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-lg">-->
+<!--                    WA-->
+<!--                </div>-->
+                <div>
+                    <div class="text-xl font-bold">Wajahat Ashraf</div>
+                    <div class="text-sm text-primary-300">Data Engineering • Cloud • Automation</div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#home" class="text-primary-200 hover:text-white transition-colors font-medium">Home</a>
+                <a href="#projects" class="text-primary-200 hover:text-white transition-colors font-medium">Projects</a>
+                <a href="#services" class="text-primary-200 hover:text-white transition-colors font-medium">Services</a>
+                <a href="#experience" class="text-primary-200 hover:text-white transition-colors font-medium">Experience</a>
+                <a href="#skills" class="text-primary-200 hover:text-white transition-colors font-medium">Skills</a>
+                <a href="#contact" class="text-primary-200 hover:text-white transition-colors font-medium">Contact</a>
+                <a href="static/WAJAHAT_CV.pdf" download class="ml-4 bg-primary-600 hover:bg-primary-500 px-4 py-2 rounded-lg font-semibold transition-colors shadow-lg">
+                    Download CV
+                </a>
+            </div>
+
+
+            <div class="md:hidden">
+                <button class="p-2 rounded-lg border border-dark-700 hover:border-primary-500 transition-colors">
+                    <i class="fas fa-bars text-primary-300"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <!-- Profile Picture Column -->
+            <div class="flex justify-center lg:justify-start">
+                <div class="relative">
+                    <div class="w-64 h-64 rounded-2xl overflow-hidden border-4 border-primary-500 shadow-2xl bg-dark-700">
+                        <img
+                            src="static/images/profile.jpeg"
+                            alt="Wajahat Ashraf"
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+
+                    <!-- Floating tech badges -->
+                    <div class="absolute -top-3 -right-3 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-code text-white text-sm"></i>
+                    </div>
+                    <div class="absolute -bottom-3 -left-3 w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-database text-white text-sm"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Column -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Name and Title -->
+                <div class="space-y-3">
+                    <h1 class="text-4xl lg:text-5xl font-bold">
+                        HI, I'm <span class="text-transparent bg-clip-text hero-gradient">Wajahat</span>
+                    </h1>
+                    <p class="text-lg text-primary-200 leading-relaxed">
+                        Data Engineering professional specializing in building scalable ETL systems,
+                        large-scale web scrapers, and cloud-deployed automation that transform
+                        complex data into actionable insights.
+                    </p>
+                </div>
+
+                <!-- Tech Stack Tags -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">Python</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">AWS</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">Relational Database</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">Web Scraping</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">Docker</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">Elasticsearch</span>
+                    <span class="bg-dark-800 border border-dark-700 px-3 py-2 rounded-lg text-primary-200 text-sm font-medium">GIS</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="#projects" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border border-primary-600 text-primary-300 hover:bg-primary-900/30 px-6 py-3 rounded-lg font-semibold transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Grid Below -->
+        <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                <div class="text-2xl font-bold text-primary-400">3+</div>
+                <div class="text-sm font-semibold mt-2">Open Source Projects</div>
+                <div class="text-xs text-primary-300 mt-1">Public repositories with detailed documentation</div>
+            </div>
+            <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                <div class="text-2xl font-bold text-primary-400">1M+</div>
+                <div class="text-sm font-semibold mt-2">Records Processed</div>
+                <div class="text-xs text-primary-300 mt-1">Geospatial and tabular data</div>
+            </div>
+            <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                <div class="text-2xl font-bold text-primary-400">98.7%</div>
+                <div class="text-sm font-semibold mt-2">Data Quality Score</div>
+                <div class="text-xs text-primary-300 mt-1">Automated validation checks</div>
+            </div>
+            <div class="text-center p-6 bg-dark-800/50 rounded-xl border border-dark-700">
+                <div class="text-2xl font-bold text-primary-400">5</div>
+                <div class="text-sm font-semibold mt-2">Production Services</div>
+                <div class="text-xs text-primary-300 mt-1">Active pipelines & APIs</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Services Section -->
+   <section id="services" class="py-20 px-6 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Services I Offer</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Comprehensive data engineering solutions tailored to your business needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        🔍
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data Extraction</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        Advanced web scraping, PBF & raster parsing, API discovery and automation.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        ⚙️
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data Engineering</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        ETL pipelines, data normalization, relational & geospatial database design and optimization.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        ☁️
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Cloud Deployments</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        AWS EC2/S3/Elastic Beanstalk, Docker, Kubernetes, and autoscaling setups.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        📊
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Search & Indexing</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        Relational → non-relational search sync pipelines, search optimization and tuning.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        🤖
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Automation & CI/CD</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        Docker, Jenkins, GitHub Actions, pipeline monitoring and deployment automation.
+                    </p>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        📈
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Reporting & Analytics</h3>
+                    <p class="text-primary-200 leading-relaxed">
+                        Google Docs macros, APIs, live dashboards and data visualization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    In-depth case studies showcasing complex data engineering challenges and solutions
+                </p>
+            </div>
+
+            <div class="space-y-12">
+
+                <!-- Project 1 -->
+                <div class="bg-dark-800 rounded-2xl overflow-hidden border border-dark-700 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">ThinkGIS Scraper</h3>
+                                <p class="text-primary-200 leading-relaxed">
+                                    Full-stack automated scraping system for extracting multi-layer zoning data from WTHGIS county maps. Features include Selenium-based dynamic layer extraction, robust feature scraping with retries, job management, real-time logs, and GeoJSON export for download and mapping.
+                                </p>
+                            </div>
+
+                            <!-- Project Image -->
+                            <div class="bg-dark-700 rounded-xl p-4 border border-dark-600">
+                                <img src="static/images/thinkgis.png" alt="ThinkGIS Scraper" class="w-full h-50 object-cover rounded-lg">
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Key Features:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Automated discovery and extraction of zoning layers via Selenium</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Dynamic feature scraping loop with error handling and retry logic</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Parallel job execution with isolated logs and status tracking</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Real-time job monitoring via WebSocket-powered console</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Export and download of clean GeoJSON FeatureCollections</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Interactive frontend for inputting county URLs, selecting layers, and monitoring jobs</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Tech Stack:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Python</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Selenium</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">FastAPI</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">WebSockets</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Docker</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Cloud Storage (AWS S3)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">200K+</div>
+                                    <div class="text-sm text-primary-300 capitalize">records</div>
+                                </div>
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">120</div>
+                                    <div class="text-sm text-primary-300 capitalize">counties</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <a href="https://github.com/wajahatashraf/ThinkGIS_Scaper" target="_blank" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-xl p-4 border border-dark-700 max-w-md mx-auto">
+                            <div class="text-center text-primary-300 mb-4 font-semibold">Project Role</div>
+                            <p class="text-primary-200 leading-relaxed">
+                                Project Owner & Lead Developer — Designed and implemented a full-stack scraping pipeline with front-end layer selection, job queueing, live log monitoring, and GeoJSON export capabilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-dark-800 rounded-2xl overflow-hidden border border-dark-700 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Beacon Scraper</h3>
+                                <p class="text-primary-200 leading-relaxed">
+                                    Stealth web scraping system to extract multi-layer zoning datasets while bypassing Cloudflare protections. Automates layer discovery, bounding box calculation, data extraction, database storage, and GeoJSON export for GIS review.
+                                </p>
+                            </div>
+
+                            <div class="bg-dark-700 rounded-xl p-4 border border-dark-600">
+                                <img src="static/images/beacon.png" alt="Beacon Scraper" class="w-full h-50 object-cover rounded-lg">
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Key Features:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Undetectable browser automation with user-like interactions to bypass Cloudflare</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Automatic extraction of zoning layers and spatial extents</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Bounding box calculation and database storage of geometries</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Data normalization and attribute trimming</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Tech Stack:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Python</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Web Scraping & Automation</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Relational Database</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Docker</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Queue Management</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">500K+</div>
+                                    <div class="text-sm text-primary-300 capitalize">records</div>
+                                </div>
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">450</div>
+                                    <div class="text-sm text-primary-300 capitalize">cities</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <a href="https://github.com/wajahatashraf/Beacon_Scraper" target="_blank" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-xl p-4 border border-dark-700 max-w-md mx-auto">
+                            <div class="text-center text-primary-300 mb-4 font-semibold">Project Role</div>
+                            <p class="text-primary-200 leading-relaxed">
+                                Project Owner & Lead Developer — Designed and implemented a stealth scraping pipeline using automated browser interactions to bypass Cloudflare, extract zoning layers, calculate spatial extents, and generate GIS-ready outputs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-dark-800 rounded-2xl overflow-hidden border border-dark-700 card-hover">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Google Docs Macro</h3>
+                                <p class="text-primary-200 leading-relaxed">
+                                    Google Docs macro that connects with an external organizational API to fetch zoning data. Users can input latitude/longitude coordinates or an address to retrieve zoning information and associated geometries, which can also be visualized on OpenStreetMap for spatial context.
+                                </p>
+                            </div>
+
+                            <div class="bg-dark-700 rounded-xl p-4 border border-dark-600">
+                                <img src="static/images/gdocs.png" alt="Google Docs Macro" class="w-full h-50 object-cover rounded-lg">
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Key Features:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Fetch zoning data using latitude/longitude or address</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Retrieve zoning details with geometries from the API</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Display results directly inside Google Docs</span>
+                                        <span class="bg-primary-900/30 text-primary-300 px-3 py-1 rounded-lg text-sm">Visualize geometries on OpenStreetMap</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-semibold mb-2">Tech Stack:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">Apps Script</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">REST API</span>
+                                        <span class="bg-dark-700 text-primary-200 px-3 py-1 rounded-lg text-sm border border-dark-600">OpenStreetMap</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-4 gap-4">
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">100+</div>
+                                    <div class="text-sm text-primary-300 capitalize">docs</div>
+                                </div>
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">Realtime</div>
+                                    <div class="text-sm text-primary-300 capitalize">refresh</div>
+                                </div>
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">20+</div>
+                                    <div class="text-sm text-primary-300 capitalize">users</div>
+                                </div>
+                                <div class="text-center p-4 bg-dark-700/50 rounded-lg">
+                                    <div class="text-lg font-bold text-primary-400">&lt;2s</div>
+                                    <div class="text-sm text-primary-300 capitalize">response_time</div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <a href="https://github.com/wajahatashrafGoogle-Docs-Marco" target="_blank" class="bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-700 rounded-xl p-4 border border-dark-700 max-w-md mx-auto">
+                            <div class="text-center text-primary-300 mb-4 font-semibold">Project Role</div>
+                            <p class="text-primary-200 leading-relaxed">
+                                Owner — Designed the macro and API integration for on-demand zoning data retrieval and visualization within Google Docs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-dark-900/50">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Experience & Education</h2>
+            <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                My professional journey and academic background
+            </p>
+        </div>
+
+        <div class="relative">
+            <div class="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-primary-300 rounded-full"></div>
+            <div class="space-y-12">
+
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-20">
+                    <div class="absolute left-6 top-2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-briefcase text-white text-sm"></i>
+                    </div>
+                    <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                            <h3 class="text-xl font-bold">Data Scientist</h3>
+                            <span class="text-primary-400 font-semibold">Jan 2024 – Present</span>
+                        </div>
+                        <div class="text-primary-300 font-semibold mb-4">Magma Systems (Zoneomics)</div>
+                        <p class="text-primary-200 mb-6">
+                            Lead the design, development, and automation of large-scale geospatial, zoning, and parcel data pipelines. Streamlined end-to-end ingestion, processing, scraping, transformation, and syncing workflows using Python, Flask APIs, PostgreSQL, Elasticsearch, AWS, Docker, and Jenkins. Optimized production data systems to support analytics, dashboards, and AI-powered products across Zoneomics.
+                        </p>
+                        <div class="space-y-2">
+                            <h4 class="font-semibold text-primary-400">Key Achievements:</h4>
+                            <ul class="list-disc list-inside text-primary-200 space-y-1">
+                                <li>Automated multi-pipeline ingestion/update system for zoning, parcel, parking, raster, PBF, and tabular datasets</li>
+                                <li>Developed Flask-based APIs to handle automated data insertion, processing, validation, and retrieval</li>
+                                <li>Built large-scale web scraping pipelines for structured and unstructured data from multiple U.S. city websites</li>
+                                <li>Developed automated solutions to extract and standardize parking-related data into clean JSON formats</li>
+                                <li>Implemented cross-database synchronization workflows between relational and non-relational systems</li>
+                                <li>Designed and enforced data integrity and quality-check layers to ensure accurate and reliable outputs</li>
+                                <li>Built automated email pipelines (daily/weekly/monthly) for various operational and business scenarios</li>
+                                <li>Optimized data processing and ETL workflows to reduce runtime, improve efficiency, and support high-volume data</li>
+                                <li>Leveraged AWS services (EC2, S3, Elastic Beanstalk) for scalable, reliable, and secure deployment</li>
+                                <li>Managed containerized environments with Docker and automated CI/CD pipelines using Jenkins and Git</li>
+                                <li>Integrated monitoring and alerting dashboards to track pipeline performance and proactively detect failures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-20">
+                    <div class="absolute left-6 top-2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-briefcase text-white text-sm"></i>
+                    </div>
+                    <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                            <h3 class="text-xl font-bold">Data Analyst</h3>
+                            <span class="text-primary-400 font-semibold">2023 – 2024</span>
+                        </div>
+                        <div class="text-primary-300 font-semibold mb-4">COMSATS University Islamabad</div>
+                        <p class="text-primary-200 mb-6">
+                            Supported faculty and research groups with analytical tasks, automation workflows, and applied ML projects. Contributed to real-world data preparation, research experiments, and technical mentoring within the department.
+                        </p>
+                        <div class="space-y-2">
+                            <h4 class="font-semibold text-primary-400">Key Achievements:</h4>
+                            <ul class="list-disc list-inside text-primary-200 space-y-1">
+                                <li>Designed and automated scripts for data cleaning, preprocessing, and feature extraction</li>
+                                <li>Assisted in developing ML prototypes for image processing and pattern recognition tasks</li>
+                                <li>Built small-scale automation systems using sensors, microcontrollers, and Python pipelines</li>
+                                <li>Guided junior students in Python, algorithms, and applied data engineering practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-20">
+                    <div class="absolute left-6 top-2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-briefcase text-white text-sm"></i>
+                    </div>
+                    <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                            <h3 class="text-xl font-bold">B.S. Computer Engineering</h3>
+                            <span class="text-primary-400 font-semibold">2020 – 2024</span>
+                        </div>
+                        <div class="text-primary-300 font-semibold mb-4">COMSATS University Islamabad</div>
+                        <p class="text-primary-200 mb-6">
+                            Focused on data engineering, algorithms, databases, and embedded systems. Gained hands-on experience in data pipelines, ETL workflows, data processing, and research in machine learning.
+                        </p>
+                        <div class="space-y-2">
+                            <h4 class="font-semibold text-primary-400">Key Achievements:</h4>
+                            <ul class="list-disc list-inside text-primary-200 space-y-1">
+                                <li>Built ETL pipelines and automated data processing workflows for academic projects</li>
+                                <li>Implemented database-driven projects using SQL, PostgreSQL, and data integration techniques</li>
+                                <li>Conducted research in machine learning and data analytics with practical dataset applications</li>
+                                <li>Best Final Year Project award for data-focused research</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Skills & Technologies</h2>
+            <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                Technical expertise across the data engineering stack
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Skills with Progress Bars -->
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold mb-6">Core Competencies</h3>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🐍</span> <span class="font-semibold">Python</span></div>
+                        <span class="text-primary-400 font-bold">96%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 96%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🗄️</span> <span class="font-semibold">SQL / PostgreSQL</span></div>
+                        <span class="text-primary-400 font-bold">98%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 98%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🕷️</span> <span class="font-semibold">Web Scraping</span></div>
+                        <span class="text-primary-400 font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">☁️</span> <span class="font-semibold">AWS</span></div>
+                        <span class="text-primary-400 font-bold">92%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🐳</span> <span class="font-semibold">Docker & CI/CD</span></div>
+                        <span class="text-primary-400 font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🔍</span> <span class="font-semibold">Elasticsearch</span></div>
+                        <span class="text-primary-400 font-bold">85%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🟨</span> <span class="font-semibold">JavaScript</span></div>
+                        <span class="text-primary-400 font-bold">88%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">⚙️</span> <span class="font-semibold">Jenkins</span></div>
+                        <span class="text-primary-400 font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🌐</span> <span class="font-semibold">FastAPI / Flask / REST</span></div>
+                        <span class="text-primary-400 font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🛠️</span> <span class="font-semibold">Git / GitHub</span></div>
+                        <span class="text-primary-400 font-bold">97%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 97%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">📈</span> <span class="font-semibold">Grafana / Monitoring</span></div>
+                        <span class="text-primary-400 font-bold">82%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 82%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">🚀</span> <span class="font-semibold">CI/CD Pipelines</span></div>
+                        <span class="text-primary-400 font-bold">93%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 93%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3"><span class="text-xl">📉</span> <span class="font-semibold">Data Visualization</span></div>
+                        <span class="text-primary-400 font-bold">96%</span>
+                    </div>
+                    <div class="w-full bg-dark-700 rounded-full h-3">
+                        <div class="skill-bar h-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-300" style="width: 96%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Technologies Grid & Certifications -->
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold mb-6">Technologies & Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Scrapy</div>
+                        <div class="text-xs text-primary-300 mt-1">Web Scraping</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Selenium</div>
+                        <div class="text-xs text-primary-300 mt-1">Web Scraping</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">React</div>
+                        <div class="text-xs text-primary-300 mt-1">Frontend</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Redis</div>
+                        <div class="text-xs text-primary-300 mt-1">Cache</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">PostgreSQL</div>
+                        <div class="text-xs text-primary-300 mt-1">Database</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Flask</div>
+                        <div class="text-xs text-primary-300 mt-1">Backend</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">FastAPI</div>
+                        <div class="text-xs text-primary-300 mt-1">Backend</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Celery</div>
+                        <div class="text-xs text-primary-300 mt-1">Task Queue</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">TailwindCSS</div>
+                        <div class="text-xs text-primary-300 mt-1">CSS Framework</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">AWS</div>
+                        <div class="text-xs text-primary-300 mt-1">Cloud</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">S3</div>
+                        <div class="text-xs text-primary-300 mt-1">Cloud Storage</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">CloudWatch</div>
+                        <div class="text-xs text-primary-300 mt-1">Monitoring</div>
+                    </div>
+                    <div class="bg-dark-800 border border-dark-700 rounded-xl p-4 text-center card-hover">
+                        <div class="text-primary-400 font-semibold">Docker</div>
+                        <div class="text-xs text-primary-300 mt-1">Containerization</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <h3 class="text-xl font-bold mb-4">Certifications</h3>
+                <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700">
+                    <div class="space-y-3">
+                        <div class="flex flex-col py-2 border-b border-dark-700 last:border-b-0">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-semibold">Generative AI: Introduction and Applications</div>
+                                    <div class="text-sm text-primary-300">IBM via Coursera</div>
+                                </div>
+                                <div class="text-primary-400 text-sm">July 2025</div>
+                            </div>
+                            <div class="text-primary-200 text-sm mt-1">
+                                Covered fundamentals of Generative AI vs Discriminative AI, practical applications across industries, AI tools for text, image, audio, video, and code generation, and skills like Prompt Engineering and Content Creation.
+                            </div>
+                            <div class="mt-1">
+                                <a href="https://coursera.org/share/f0e90106437084eb86acc097d444de24" target="_blank" class="text-primary-400 text-sm underline hover:text-primary-500">Verify Certificate</a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col py-2 border-b border-dark-700 last:border-b-0">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-semibold">Advanced Data Structures & Quantum Algorithms</div>
+                                    <div class="text-sm text-primary-300">Coursera (CU Boulder)</div>
+                                </div>
+                                <div class="text-primary-400 text-sm">June 2025</div>
+                            </div>
+                            <div class="text-primary-200 text-sm mt-1">
+                                Explored RSA cryptosystem foundations, basics of quantum computation, quantum algorithms vs classical approaches, advanced data structures, and practical applications using Python.
+                            </div>
+                            <div class="mt-1">
+                                <a href="https://coursera.org/share/f2cc9a0c150899190233adc4a16b6167" target="_blank" class="text-primary-400 text-sm underline hover:text-primary-500">Verify Certificate</a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col py-2 border-b border-dark-700 last:border-b-0">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-semibold">AWS Cloud Practitioner</div>
+                                    <div class="text-sm text-primary-300">Amazon Web Services</div>
+                                </div>
+                                <div class="text-primary-400 text-sm">October 2024</div>
+                            </div>
+                            <div class="text-primary-200 text-sm mt-1">
+                                Enhanced understanding of AWS Cloud concepts, services, security, and architecture. Gained foundational knowledge to navigate and leverage AWS for business applications.
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col py-2 border-b border-dark-700 last:border-b-0">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="font-semibold">Python for Data Science</div>
+                                    <div class="text-sm text-primary-300">IBM via Coursera</div>
+                                </div>
+                                <div class="text-primary-400 text-sm">July 2024</div>
+                            </div>
+                            <div class="text-primary-200 text-sm mt-1">
+                                Certified in Python programming for Data Science and Development. Skills include Python logic, libraries (Pandas, NumPy, Jupyter), data structures, web scraping, API access, and data analysis.
+                            </div>
+                            <div class="mt-1">
+                                <a href="https://www.coursera.org/account/accomplishments/verify/AZ28U5FMYFY9?utm_product=course" target="_blank" class="text-primary-400 text-sm underline hover:text-primary-500">Verify Certificate</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6 bg-dark-900/50">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Client Testimonials</h2>
+            <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                What colleagues and clients say about working with me
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                <div class="text-4xl text-primary-400 mb-4">"</div>
+                <p class="text-primary-200 italic mb-6 leading-relaxed">
+                    Wajahat built a reliable scraping pipeline that replaced a manual, error-prone process. Results improved quickly and the system is now automated end-to-end with 99.9% uptime.
+                </p>
+                <div class="border-t border-dark-700 pt-4">
+                    <div class="font-semibold">Sarah Chen</div>
+                    <div class="text-sm text-primary-400">Product Lead, Freelance Client</div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                <div class="text-4xl text-primary-400 mb-4">"</div>
+                <p class="text-primary-200 italic mb-6 leading-relaxed">
+                    Delivered a complex dataset cleaning tool under tight deadlines. Highly professional, reliable, and excellent at communicating progress throughout the project.
+                </p>
+                <div class="border-t border-dark-700 pt-4">
+                    <div class="font-semibold">Michael Rodriguez</div>
+                    <div class="text-sm text-primary-400">Data Engineer, Freelance Project</div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 card-hover">
+                <div class="text-4xl text-primary-400 mb-4">"</div>
+                <p class="text-primary-200 italic mb-6 leading-relaxed">
+                    Great communicator and fast iterater — produced clear documentation and automated tests that significantly improved our development workflow.
+                </p>
+                <div class="border-t border-dark-700 pt-4">
+                    <div class="font-semibold">David Kim</div>
+                    <div class="text-sm text-primary-400">Engineering Manager, Freelance Collaboration</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Ready to transform your data challenges into solutions?
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                        <p class="text-primary-200 leading-relaxed">
+                            I'm currently available for freelance work, contract positions, and full-time roles.
+                            Let's discuss how I can help you build robust data solutions.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-primary-300">wajahatashraf420@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Phone</div>
+                                <div class="text-primary-300">+92 333 6188437</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Location</div>
+                                <div class="text-primary-300">Rawalpindi, Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://github.com/wajahatashraf" target="_blank" class="w-12 h-12 bg-dark-700 hover:bg-primary-600 rounded-xl flex items-center justify-center transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/wajahatashraf99" target="_blank" class="w-12 h-12 bg-dark-700 hover:bg-primary-600 rounded-xl flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700">
+                    <form action="https://formspree.io/f/mdkyojje" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Your Name</label>
+                                <input type="text" name="name" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Your Email</label>
+                                <input type="email" name="email" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Subject</label>
+                            <input type="text" name="subject" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="Project Discussion">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea name="message" rows="5" required class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:border-primary-500 focus:outline-none transition-colors" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-500 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold mb-4">Wajahat Ashraf</div>
+            <p class="text-primary-300 max-w-md mx-auto mb-8">
+                Data Engineering Specialist • Cloud Architect • Automation Expert
+            </p>
+            <div class="text-primary-400">
+    ©           <span id="year"></span> Wajahat Ashraf. All rights reserved.
+            </div>
+
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate skill bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const level = bar.getAttribute('data-level');
+                        bar.style.width = level + '%';
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('#skills'));
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-dark-900/95');
+            } else {
+                nav.classList.remove('bg-dark-900/95');
+            }
+        });
+    </script>
+</body>
+</html>
